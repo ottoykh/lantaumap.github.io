@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; } #myInput { background-image: url('/css/searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; width: 100%; font-size: 12px; padding: 12px 20px 12px 40px; border: 1px solid #ddd; margin-bottom: 14px; } #myInput3 { background-image: url('/css/searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; width: 100%; font-size: 12px; padding: 12px 20px 12px 40px; border: 1px solid #ddd; margin-bottom: 14px; } #myTable { border-collapse: collapse; width: 100%; border: 1px solid #ddd; font-size: 14px; } #myTable th, #myTable td { text-align: left; padding: 14px; } #myTable tr { border-bottom: 1px solid #ddd; } #myTable tr.header, #myTable tr:hover { background-color: #dfe8d1; } .dropbtn { background-color: #04AA6D; color: white; padding: 10px; font-size: 12px; border: none; cursor: pointer; } .dropbtn:hover, .dropbtn:focus { background-color: #3e8e41; } #myInput2 { box-sizing: border-box; background-image: url('searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; font-size: 12px; padding: 20px 20px 12px 45px; border: none; border-bottom: 1px solid #ddd; } #myInput:focus {outline: 3px solid #ddd;} .dropdown { position: relative; display: inline-block; } .dropdown-content { display: none; position: absolute; background-color: #f6f6f6; min-width: 280px; overflow: auto; border: 1px solid #ddd; z-index: 1; } .dropdown-content a { color: black; padding: 12px 12px; text-decoration: none; display: block; } .dropdown a:hover {background-color: #ddd;} .show {display: block;}
+</style>
+</head>
+<body>
+    
+ <a href="https://www.instagram.com/p/CgZMsqQv-5f/"><img src="https://lh3.googleusercontent.com/2DipCNiwBIWykqmN_UTMlbYXbKaGGprQavYtpLod_hsu8g96TMZpCQOyJzbNUsATWGEztcO0qPBTNHpMlPiG-an-GNJG48sS9-4edaDszA5FnuNZG_CDtRH_35vu5phk8TpbIOjXvbbYuY-EHkD3YBjR_g" width="520" height="66"></a>
+ <h3>嶼巴 NLB 23 (往昂坪 To Ngong Ping)</h3>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="輸入您的目的地 Type your destinations">
+
+<table style="font-size: 14px"><tr><td>下一班車 Next bus in: </td><td><div id="info"></div></td><tr><td>今天的票價是 Today's fare is #:</td><td><p id="demo"><p style="font-size: x-small"> #香港公眾假期不包括在這功能This function are not compatible during the Hong Kong Public Holiday</p></table> 
+
+<table id="myTable">
+  <tr class="header">
+ 	 <th style="width:25%;">往 To (Directions)</th>
+     <th style="width:25%;">來自 From</th>
+    <th style="width:15%;">平日票價 Weekdays fare</th>
+    <th style="width:15%;">假日票價 Holidays fare</th>
+    <th style="width:25%;">交通時間 traffic time^ </th>
+  </tr>
+<tr><td></td><td>東涌達東路巴士總站  Tung Chung Tat Tung Road Bus Terminus </td><td>$18.70 </td><td>$31.00 </td><td></td>
+<tr><td>富東廣場  Fu Tung Plaza </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:03</td>
+<tr><td>裕東苑  Yu Tung Court </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:05</td>
+<tr><td>北大嶼山醫院(北行), 逸東邨美逸樓 [部份班次途經此站] North Lantau Hospital (North Bound), Mei Yat House Yat Tung Estate [Some departure observe this stop]</td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:07</td>
+<tr><td>北大嶼山醫院(南行) [部份班次途經此站] North Lantau Hospital (South Bound) [Some departure observe this stop]</td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:09</td>
+<tr><td>東涌鄉事委員會  Tung Chung Rural Committee Office </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:10</td>
+<tr><td>上嶺皮  Sheung Ling Pei </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:11</td>
+<tr><td>下嶺皮  Ha Ling Pei </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:12</td>
+<tr><td>黃家圍  Wong Ka Wai </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:13</td>
+<tr><td>龍井頭  Lung Tseng Tau </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:14</td>
+<tr><td>石門甲道  Shek Mun Kap Road </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:17</td>
+<tr><td>十八區墳場  Cemetery Area No. 18 </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:19</td>
+<tr><td>東涌坳管理站  Tung Chung Au Management Centre </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:20</td>
+<tr><td>伯公坳  Pak Kung Au </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:23</td>
+<tr><td>長沙引水道  Cheung Sha Catchwater </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:26</td>
+<tr><td>散石灣迴旋處  San Shek Wan Roundabout </td><td></td><td>$18.70 </td><td>$31.00 </td><td>0:28</td>
+<tr><td>長沙上村  Cheung Sha Sheung Tsuen </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:29</td>
+<tr><td>長沙警署  Cheung Sha Police Headquarters </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:30</td>
+<tr><td>長沙下村  Cheung Sha Ha Tsuen </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:31</td>
+<tr><td>長沙消防局  Cheung Sha Fire Station </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:32</td>
+<tr><td>麗濱別墅  Leyburn Villas </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:33</td>
+<tr><td>蝶崗  Butterfly Crest </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:35</td>
+<tr><td>長沙大橋  Cheung Sha Bridge </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:37</td>
+<tr><td>上長沙海灘  Upper Cheung Sha Beach </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:39</td>
+<tr><td>塘福海灘  Tong Fuk Beach </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:43</td>
+<tr><td>塘福村  Tong Fuk Village </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:45</td>
+<tr><td>塘福懲教所 Tong Fuk Correctional Institution </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:47</td>
+<tr><td>麻埔坪村 Ma Po Ping Village </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:48</td>
+<tr><td>麻埔坪道口  Ma Po Ping Road Junction </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:49</td>
+<tr><td>南大嶼山海底電纜站  South Lantau Sea Cable Station </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:50</td>
+<tr><td>上橫壟  Upper Wan Lung </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:52</td>
+<tr><td>下橫壟  Lower Wan Lung </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:53</td>
+<tr><td>水口村(東)  Shui Hau Village (East) </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:54</td>
+<tr><td>水口村  Shui Hau Village </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:56</td>
+<tr><td>四眼馬  Four-Eye Ma </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:58</td>
+<tr><td>水口直升機場  Shui Hau Helicopter Landing Field </td><td></td><td>$12.20 </td><td>$21.20 </td><td>0:59</td>
+<tr><td>石壁警崗  Shek Pik Police Station </td><td></td><td>$7.30 </td><td>$16.10 </td><td>1:00</td>
+<tr><td>沙咀  Sha Tsui </td><td></td><td>$7.30 </td><td>$16.10 </td><td>1:04</td>
+<tr><td>深屈道  Sham Wat Road </td><td></td><td>$7.30 </td><td>$16.10 </td><td>1:06</td>
+<tr><td>山海亭  San Hoi Ting </td><td></td><td>$5.10 </td><td>$10.50 </td><td>1:11</td>
+<tr><td>昂坪市集  Ngong Ping Village </td><td></td><td>$5.10 </td><td>$10.50 </td><td>1:14</td>
+<tr><td>昂坪  Ngong Ping </td><td></td><td></td><td></td><td>1:16</td>
+
+</table>
+
+<p class="p1" style="font-size:9px"><a href="https://linktr.ee/lantaumap"><img src="https://lh3.googleusercontent.com/S03A0kARqqs7Kby5JkMNE4VIWsV-z7g-KC7a5VTw_povU0I5nbwHiGHgqzmBuCrRKadgJa60ugKa8rzKdwTpAbXNStowFLk1oNuTnKfwLH4pzuCMcox6dOKcOdTAU5Gdt3xmw-FRkGrtZMb1WFW2cy2YZA" style="height:65px;"></a><br><br>© 2022 Lantau island Trip advisor all right reserved, developed by Otto Yu<br><br>Terms of Service🔒<br>Lantau island Trip advisor is committed to complying with the relevant laws and regulations on the protection of personal data and the company's privacy protection policy, and properly manage and protect the privacy of users.Except for the scope notified below or otherwise provided by law, this merchant will not provide location information to third parties.</p><p class="p1" style="font-size:9px"><br>The <a href="https://docs.google.com/spreadsheets/d/1Y-rDr_guubPYimoi_6NFDwKtppNM7pO0rNbvpAuBu2o/edit?usp=sharing" class="p1" style="font-size:9px">Geodatabase </a>created by Otto in this page is an open source sheet, welcome to click the link to view the bus stations details.</p><br>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+function myFunction3() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput3");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+function myFunction2() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+const weekday = ["假日票價 Holidays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日/星期六票價 Weekdays/Saturday fare"];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+document.getElementById("demo").innerHTML = day;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+  var Timetable = function(){
+  var busstop = ["7:15","8:15","8:30","9:10","9:40","10:10","10:30","10:50","11:10","11:30","11:50","12:10","12:30","12:50","13:10","13:30","13:50","14:10","14:30","14:50","15:10","15:40","16:10","16:40","17:20","18:10"
+];
+  var today = new Date().toUTCString().slice(0, 16);
+  
+  for(var i=0, l=busstop.length; i<l; i++){
+    busstop[i] = new Date(today+" "+busstop[i]);
+  }
+  var campus = busstop;
+
+  var update = setTimeout($.noop, 0);
+  
+  this.next = function(place){
+    clearTimeout(update); 
+    if(place == "l")
+      var times = leam;
+    else
+      times = campus;
+    var now = new Date();
+    var d; 
+    var next = '<span id="time">';
+    for(var i=0, l=times.length; i<l; i++){
+      if(times[i].getTime() >= now.getTime()){
+        d = (times[i].getTime()-now.getTime())/(1000*60);
+        if(d >= 60)
+          next += Math.floor(d/60)+"</span>hours and "+Math.round(d % 60)+" 分鐘 mins";
+        else
+          next += Math.round(d)+"</span> 分鐘 mins";
+        break;
+      }
+    }
+    var fn = arguments.callee;
+    var _this = this;
+    update = setTimeout(function(){
+      document.getElementById('info').innerHTML = fn.call(_this, place);
+    },(d+0.5-Math.floor(d+0.5))*60*1000+1000);
+    return next;
+  }
+}
+
+var timetable = new Timetable();
+
+document.onready = function(){
+  document.getElementById('info').innerHTML = timetable.next('c');
+}
+
+$(document).ready(function(){
+    $('#c').click(function(){
+      if($(this).hasClass('active'))
+        return;
+      document.getElementById('info').innerHTML = timetable.next('c');
+      $(this).addClass('active')
+             .siblings().removeClass('active');
+    });
+    $('#l').click(function(){
+      if($(this).hasClass('active'))
+        return;
+      document.getElementById('info').innerHTML = timetable.next('l');
+      $(this).addClass('active')
+             .siblings().removeClass('active');
+    });
+});
+</script>
+</body>
+</html>

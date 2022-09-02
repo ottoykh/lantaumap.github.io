@@ -1,0 +1,68 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<div id="info"></div>
+
+<script>
+  var Timetable = function(){
+  var busstop = ["6:00","6:35","7:10","7:50","8:20","9:00","9:45","10:30","11:30","11:50","12:30","13:30","13:50","14:30","15:05","15:30","15:50","16:30","17:00","17:30","18:00","18:40","19:40","20:10","21:00","21:30","22:00","22:40","23:25","0:10","1:10"
+];
+  var today = new Date().toUTCString().slice(0, 16);
+  
+  for(var i=0, l=busstop.length; i<l; i++){
+    busstop[i] = new Date(today+" "+busstop[i]);
+  }
+  var campus = busstop;
+
+  var update = setTimeout($.noop, 0);
+  
+  this.next = function(place){
+    clearTimeout(update); 
+    if(place == "l")
+      var times = leam;
+    else
+      times = campus;
+    var now = new Date();
+    var d; 
+    var next = '<span id="time">';
+    for(var i=0, l=times.length; i<l; i++){
+      if(times[i].getTime() >= now.getTime()){
+        d = (times[i].getTime()-now.getTime())/(1000*60);
+        if(d >= 60)
+          next += Math.floor(d/60)+"</span>hours and "+Math.round(d % 60)+" 分鐘 mins";
+        else
+          next += Math.round(d)+"</span> 分鐘 mins";
+        break;
+      }
+    }
+    var fn = arguments.callee;
+    var _this = this;
+    update = setTimeout(function(){
+      document.getElementById('info').innerHTML = fn.call(_this, place);
+    },(d+0.5-Math.floor(d+0.5))*60*1000+1000);
+    return next;
+  }
+}
+
+var timetable = new Timetable();
+
+document.onready = function(){
+  document.getElementById('info').innerHTML = timetable.next('c');
+}
+
+$(document).ready(function(){
+    $('#c').click(function(){
+      if($(this).hasClass('active'))
+        return;
+      document.getElementById('info').innerHTML = timetable.next('c');
+      $(this).addClass('active')
+             .siblings().removeClass('active');
+    });
+    $('#l').click(function(){
+      if($(this).hasClass('active'))
+        return;
+      document.getElementById('info').innerHTML = timetable.next('l');
+      $(this).addClass('active')
+             .siblings().removeClass('active');
+    });
+});
+</script>

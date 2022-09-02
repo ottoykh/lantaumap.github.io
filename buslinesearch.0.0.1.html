@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; } #myInput { background-image: url('/css/searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; width: 100%; font-size: 12px; padding: 12px 20px 12px 40px; border: 1px solid #ddd; margin-bottom: 14px; } #myInput3 { background-image: url('/css/searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; width: 100%; font-size: 12px; padding: 12px 20px 12px 40px; border: 1px solid #ddd; margin-bottom: 14px; } #myTable { border-collapse: collapse; width: 100%; border: 1px solid #ddd; font-size: 14px; } #myTable th, #myTable td { text-align: left; padding: 14px; } #myTable tr { border-bottom: 1px solid #ddd; } #myTable tr.header, #myTable tr:hover { background-color: #dfe8d1; } .dropbtn { background-color: #04AA6D; color: white; padding: 10px; font-size: 12px; border: none; cursor: pointer; } .dropbtn:hover, .dropbtn:focus { background-color: #3e8e41; } #myInput2 { box-sizing: border-box; background-image: url('searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; font-size: 12px; padding: 20px 20px 12px 45px; border: none; border-bottom: 1px solid #ddd; } #myInput:focus {outline: 3px solid #ddd;} .dropdown { position: relative; display: inline-block; } .dropdown-content { display: none; position: absolute; background-color: #f6f6f6; min-width: 280px; overflow: auto; border: 1px solid #ddd; z-index: 1; } .dropdown-content a { color: black; padding: 12px 12px; text-decoration: none; display: block; } .dropdown a:hover {background-color: #ddd;} .show {display: block;}
+</style>
+</head>
+<body>
+    
+<div class="dropdown">
+  <div id="myDropdown" class="dropdown-content">
+    <input type="text" placeholder="輸入巴士號碼 Line number" id="myInput2" onkeyup="filterFunction()">
+<a href="https://www.nlb.com.hk/route/routemap/1" target=" _blank" >1 往 大澳 Tai O</a>
+<a href="https://www.nlb.com.hk/route/routemap/2" target=" _blank" >1 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/3" target=" _blank" >1R 往 昂坪 Ngong Ping</a>
+<a href="https://www.nlb.com.hk/route/routemap/5" target=" _blank" >2 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/4" target=" _blank" >2 往 昂坪 Ngong Ping</a>
+<a href="https://www.nlb.com.hk/route/routemap/7" target=" _blank" >3M 往 東涌站巴士總站 Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/8" target=" _blank" >3M 往 東涌站巴士總站 Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/63" target=" _blank" >3M 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/9" target=" _blank" >4 往 塘福 Tong Fuk</a>
+<a href="https://www.nlb.com.hk/route/routemap/8" target=" _blank" >4 往 塘福 (至水口) Tong Fuk (To Shui Hau)</a>
+<a href="https://www.nlb.com.hk/route/routemap/10" target=" _blank" >4 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/12" target=" _blank" >4 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/72" target=" _blank" >7S 往 禮智園墳場 Lai Chi Yuen Cemetery</a>
+<a href="https://www.nlb.com.hk/route/routemap/70" target=" _blank" >7S 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/13" target=" _blank" >11 往 大澳 Tai O</a>
+<a href="https://www.nlb.com.hk/route/routemap/14" target=" _blank" >11 往 東涌站巴士總站 Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/15" target=" _blank" >11A 往 東涌站巴士總站 Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/16" target=" _blank" >11A 往 石壁 Shek Pik</a>
+<a href="https://www.nlb.com.hk/route/routemap/97" target=" _blank" >11R 往 東涌站巴士總站 Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/98" target=" _blank" >11R 往 塘福 Tong Fuk</a>
+<a href="https://www.nlb.com.hk/route/routemap/20" target=" _blank" >21 往 大澳 Tai O</a>
+<a href="https://www.nlb.com.hk/route/routemap/19" target=" _blank" >21 往 昂坪 Ngong Ping</a>
+<a href="https://www.nlb.com.hk/route/routemap/21" target=" _blank" >23 往 昂坪 Ngong Ping</a>
+<a href="https://www.nlb.com.hk/route/routemap/22" target=" _blank" >23 往 東涌達東路巴士總站 Tung Chung</a>
+<a href="https://www.nlb.com.hk/route/routemap/24" target=" _blank" >34 往 石門甲 Shek Mun Kap</a>
+<a href="https://www.nlb.com.hk/route/routemap/23" target=" _blank" >34 往 東涌達東路巴士總站 Tung Chung</a>
+<a href="https://www.nlb.com.hk/route/routemap/71" target=" _blank" >34S 往 十八區墳場 (循環線) Cemetery Area No. 18</a>
+<a href="https://www.nlb.com.hk/route/routemap/101" target=" _blank" >36 往 東涌達東路巴士總站 Tung Chung</a>
+<a href="https://www.nlb.com.hk/route/routemap/102" target=" _blank" >36 往 迪士尼樂園 Disneyland</a>
+<a href="https://www.nlb.com.hk/route/routemap/100" target=" _blank" >36X 往 迪士尼樂園 Disneyland</a>
+<a href="https://www.nlb.com.hk/route/routemap/80" target=" _blank" >37 往 迎東邨 Ying Tung Estate</a>
+<a href="https://www.nlb.com.hk/route/routemap/78" target=" _blank" >37 往 逸東邨 Yat Tung Estate</a>
+<a href="https://www.nlb.com.hk/route/routemap/96" target=" _blank" >37H 往 北大嶼山醫院 (循環線) North Lantau Hosiptal</a>
+<a href="https://www.nlb.com.hk/route/routemap/82" target=" _blank" >37M 往 東涌站巴士總站 (循環線) Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/63" target=" _blank" >37P 往 映灣園 Caribbean Coast</a>
+<a href="https://www.nlb.com.hk/route/routemap/75" target=" _blank" >37S 往 東涌站巴士總站 Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/30" target=" _blank" >38 往 東涌站巴士總站 (循環線) Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/29" target=" _blank" >38X 往 東涌站巴士總站 (循環線) Tung Chung MTR</a>
+<a href="https://www.nlb.com.hk/route/routemap/95" target=" _blank" >39M 往 滿東邨 (循環線) Mun Tung Estate</a>
+<a href="https://www.nlb.com.hk/route/routemap/90" target=" _blank" >A35 往 大橋香港口岸 HKZMB Hong Kong Port</a>
+<a href="https://www.nlb.com.hk/route/routemap/91" target=" _blank" >A35 往 梅窩碼頭 Mui Wo pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/87" target=" _blank" > B4 往 機場 (客運大樓) (循環線) Airport </a>
+<a href="https://www.nlb.com.hk/route/routemap/88" target=" _blank" > B6 往 大橋香港口岸 HKZMB Hong Kong Port </a>
+<a href="https://www.nlb.com.hk/route/routemap/89" target=" _blank" > B6 往 滿東邨 Mun Tung Estate </a>
+<a href="https://www.nlb.com.hk/route/routemap/40" target=" _blank" > N1 往 大澳 Tai O </a>
+<a href="https://www.nlb.com.hk/route/routemap/92" target=" _blank" > N35 往 梅窩碼頭 Mui Wo Pier</a>
+<a href="https://www.nlb.com.hk/route/routemap/93" target=" _blank" > N35 往 大橋香港口岸 HKZMB Hong Kong Port </a>
+<a href="https://www.nlb.com.hk/route/routemap/86" target=" _blank" > N37 往 東涌站巴士總站 (循環線) Tung Chung MTR </a>
+<a href="https://www.nlb.com.hk/route/routemap/45" target=" _blank" > N38 往 逸東邨 Yat Yung Estate</a>
+<a href="https://www.nlb.com.hk/route/routemap/44 " target=" _blank" > N38 往 東涌站巴士總站 Tung Chung MTR </a>
+  </div>
+</div>
+
+ <button onclick="myFunction2()" class="dropbtn">按巴士號碼搜尋 Search by Line</button>
+ <a href="https://www.instagram.com/p/CgZMsqQv-5f/"><img src="https://lh3.googleusercontent.com/2DipCNiwBIWykqmN_UTMlbYXbKaGGprQavYtpLod_hsu8g96TMZpCQOyJzbNUsATWGEztcO0qPBTNHpMlPiG-an-GNJG48sS9-4edaDszA5FnuNZG_CDtRH_35vu5phk8TpbIOjXvbbYuY-EHkD3YBjR_g" width="520" height="66"></a>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="輸入您的目的地 Type your destinations">
+<input type="text" id="myInput3" onkeyup="myFunction3()" placeholder="輸入您的起點 Type your starting point">
+<table style="font-size: small"><tr><td>今天的票價是 Today's fare is #:</td><td><p id="demo"> <p style="font-size: x-small"> #香港公眾假期不包括在這功能This function are not compatible during the Hong Kong Public Holiday</p></table> 
+
+<table id="myTable">
+  <tr class="header">
+ 	 <th style="width:25%;">往 To (Directions)</th>
+     <th style="width:25%;">來自 From</th>
+    <th style="width:5%;">服務公司 Service company</th>
+    <th style="width:5%;">路線 line</th>
+    <th style="width:10%;">平日票價 Weekdays fare</th>
+    <th style="width:10%;">假日票價 Holidays fare</th>
+  </tr>
+
+
+
+<tr><td> <a href="https://lantauislandmaphongkong.on.drv.tw/Tai-O.html">大澳 Tai O</a></td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>1</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/1_t_w.html"> $11.60  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/1_t_h.html"> $19.50  </a> </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a></td><td><a href="https://lantauislandmaphongkong.on.drv.tw/Tai-O.html">大澳 Tai O</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>1</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/1_mw_w.html"> $11.60  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/1_mw_h.html"> $19.50  </a> </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a></td><td>紅磡 (紅鸞道) </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>1R</td><td> / </td><td> $47.20 </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a></td><td><a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>2</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/2_mw_w.html"> $18.70  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/2_mw_h.html"> $31.00  </a> </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a></td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>2</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/2_np_w.html"> $18.70  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/2_np_h.html"> $31.00  </a> </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>梅窩 Mui Wo (貝澳開 From Pui O) </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>3M</td><td> $11.40 </td><td> $17.80 </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>3M</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/3_tc_w.html"> $11.40  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/3_tc_h.html"> $17.80  </a> </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a></td><td>東涌站巴士總站 Tung Chung MTR </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>3M</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/3_mw_w.html"> $9.30  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/3_mw_h.html"> $15.30  </a> </td>
+<tr><td> 塘福 Tong Fuk</td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>4</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/4_tf_w.html"> $6.10  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/4_tf_h.html"> $11.90  </a> </td>
+<tr><td> 塘福 Tong Fuk (至水口 To Shui Hau)</td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>4</td><td> $6.10 </td><td> $11.90 </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a></td><td>塘福 Tong Fuk hu  </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>4</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/4_mw_w.html"> $6.10  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/4_mw_h.html"> $11.90  </a> </td>
+
+<tr><td> 禮智園墳場 Lai Chi Yuen Cemetery</td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>7S</td><td> / </td><td> $5.40 </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a></td><td>禮智園墳場 Lai Chi Yuen Cemetery </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>7S</td><td> / </td><td> $6.40 </td>
+<tr><td> <a href="https://lantauislandmaphongkong.on.drv.tw/Tai-O.html">大澳 Tai O</a></td><td>東涌站巴士總站 Tung Chung MTR </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>11</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/11_t_w.html"> $12.80  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/11_t_h.html"> $21.10  </a> </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td><a href="https://lantauislandmaphongkong.on.drv.tw/Tai-O.html">大澳 Tai O</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>11</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/11_tc_w.html"> $12.80  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/11_tc_h.html"> $21.10  </a> </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>石壁 Shek Pik </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>11A</td><td> $9.20 </td><td> $16.00 </td>
+<tr><td> 石壁 Shek Pik</td><td>東涌站巴士總站 Tung Chung MTR </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>11A</td><td> $9.20 </td><td> $16.00 </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>塘福 Tong Fuk </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>11R</td><td> $9.20 </td><td> $16.00 </td>
+<tr><td> 塘福 Tong Fuk</td><td>東涌站巴士總站 Tung Chung MTR </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>11R</td><td> $9.20 </td><td> $16.00 </td>
+<tr><td> <a href="https://lantauislandmaphongkong.on.drv.tw/Tai-O.html">大澳 Tai O</a></td><td><a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>21</td><td> $7.20 </td><td> $16.10 </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a></td><td><a href="https://lantauislandmaphongkong.on.drv.tw/Tai-O.html">大澳 Tai O</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>21</td><td> $7.20 </td><td> $16.10 </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a></td><td>東涌達東路巴士總站 Tung Chung </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>23</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/23_np_w.html"> $18.70  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/11_t_h.html"> $31.00  </a> </td>
+<tr><td> 東涌達東路巴士總站 Tung Chung</td><td><a href="https://lantau-map-bus-service.on.drv.tw/website/NP.html">昂坪 Ngong Ping</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>23</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/23_t_w.html"> $18.70  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/23_t_h.html"> $31.00  </a> </td>
+<tr><td> 石門甲 Shek Mun Kap</td><td>東涌達東路巴士總站 Tung Chung </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>34</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/34_s_w.html"> $4.70  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/34_s_h.html"> $4.70  </a> </td>
+<tr><td> 東涌達東路巴士總站 Tung Chung</td><td>石門甲 Shek Mun Kap </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>34</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/34_t_w.html"> $4.70  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/34_t_h.html"> $4.70  </a> </td>
+<tr><td> 十八區墳場 Cemetery Area No. 18</td><td>東涌達東路巴士總站 Tung Chung </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>34S</td><td> / </td><td> $4.70 </td>
+<tr><td> 東涌達東路巴士總站 Tung Chung</td><td><a href="https://lantau-map-bus-service.on.drv.tw/dis_w.html">迪士尼樂園 Disneyland</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>36</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/36_t.html"> $9.80  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/36_t.html"> $9.80  </a> </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/dis_w.html">迪士尼樂園 Disneyland</a></td><td>東涌達東路巴士總站 Tung Chung </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>36</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/36_d.html"> $9.80  </a> </td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/36_d.html"> $9.80  </a> </td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/dis_w.html">迪士尼樂園 Disneyland</a></td><td>滿東邨 Mun Tung Estate </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>36X</td><td> $9.80 </td><td> $9.80 </td>
+<tr><td> 迎東邨 Ying Tung Estate</td><td>逸東邨 Yat Tung Estate </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>37</td><td> $3.50 </td><td> $3.50 </td>
+<tr><td> 逸東邨 Yat Tung Estate</td><td>迎東邨 Ying Tung Estate </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>37</td><td> $3.50 </td><td> $3.50 </td>
+<tr><td> 北大嶼山醫院 North Lantau Hospital</td><td>迎東邨 Ying Tung Estate </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>37H</td><td> $3.50 </td><td> $3.50 </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>迎東邨 Ying Tung Estate </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>37M</td><td> $3.50 </td><td> $3.50 </td>
+<tr><td> 映灣園 Caribbean Coast</td><td>逸東邨 Yat Tung Estate (裕東路 Yu Tung Road) </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>37P</td><td> $3.50 </td><td> / </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>東涌發展碼頭 Tung Chung Development Pier </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>37S</td><td> / </td><td> $3.50 </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>逸東邨 Yat Tung Estate </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>38</td><td> $3.40 </td><td> $3.40 </td>
+<tr><td> 東涌站巴士總站 Tung Chung MTR</td><td>逸東邨 Yat Tung Estate (裕東路 Yu Tung Road) </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>38X</td><td> $3.40 </td><td> / </td>
+<tr><td> 滿東邨 Mun Tung Estate</td><td>東涌站巴士總站 Tung Chung MTR </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>39M</td><td> $3.50 </td><td> $3.50 </td>
+<tr><td> 大橋香港口岸 HKZMB Hong Kong Port</td><td><a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a> </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>A35</td><td><a href="https://lantauislandmaphongkong.on.drv.tw/A35_b.html"> $18.30 </a></td><td><a href="https://lantauislandmaphongkong.on.drv.tw/A35_b.html"> $29.60 </a></td>
+<tr><td> <a href="https://lantau-map-bus-service.on.drv.tw/mwbs.html">梅窩碼頭 Mui Wo Pier</a></td><td>大橋香港口岸 HKZMB Hong Kong Port </td><td><a href="https://www.nlb.com.hk/route">嶼巴 NLB</a></td><td>A35</td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/A35_m.html"> $18.30 </a></td><td> <a href="https://lantauislandmaphongkong.on.drv.tw/A35_m.html"> $29.60</a></td>
+
+</table>
+<img src="https://lh6.googleusercontent.com/zwkSkqqsVkbsjPlxTtotLm8NBtJSpfKcFrd7pAyyk6EcD_4gzn-DVX8jRZlcKGGwOzBvcxwoOlQvhIHHaiLxyHyKWnRgMQkeFq3hjWQNY-rTUQ8KYqY5R_RippTWq102o3o0aV-FvNZWsZYgLBJ7l5G-6g" width="580" height="430">
+<p class="p1" style="font-size:9px"><a href="https://linktr.ee/lantaumap"><img src="https://lh3.googleusercontent.com/S03A0kARqqs7Kby5JkMNE4VIWsV-z7g-KC7a5VTw_povU0I5nbwHiGHgqzmBuCrRKadgJa60ugKa8rzKdwTpAbXNStowFLk1oNuTnKfwLH4pzuCMcox6dOKcOdTAU5Gdt3xmw-FRkGrtZMb1WFW2cy2YZA" style="height:65px;"></a><br><br>© 2022 Lantau island Trip advisor all right reserved, developed by Otto Yu<br><br>Terms of Service🔒<br>Lantau island Trip advisor is committed to complying with the relevant laws and regulations on the protection of personal data and the company's privacy protection policy, and properly manage and protect the privacy of users.Except for the scope notified below or otherwise provided by law, this merchant will not provide location information to third parties.</p><p class="p1" style="font-size:9px"><br>The <a href="https://docs.google.com/spreadsheets/d/1Y-rDr_guubPYimoi_6NFDwKtppNM7pO0rNbvpAuBu2o/edit?usp=sharing" class="p1" style="font-size:9px">Geodatabase </a>created by Otto in this page is an open source sheet, welcome to click the link to view the bus stations details.</p><br>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+function myFunction3() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput3");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+function myFunction2() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+const weekday = ["假日票價 Holidays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日/星期六票價 Weekdays/Saturday fare"];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+document.getElementById("demo").innerHTML = day;
+</script>
+</body>
+</html>
