@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en"><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* { box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; } #myInput { background-image: url('/css/searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; width: 100%; font-size: 12px; padding: 12px 20px 12px 40px; border: 1px solid #ddd; margin-bottom: 14px; } #myInput3 { background-image: url('/css/searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; width: 100%; font-size: 12px; padding: 12px 20px 12px 40px; border: 1px solid #ddd; margin-bottom: 14px; } #myTable { border-collapse: collapse; width: 100%; border: 1px solid #ddd; font-size: 14px; } #myTable th, #myTable td { text-align: left; padding: 14px; } #myTable tr { border-bottom: 1px solid #ddd; } #myTable tr.header, #myTable tr:hover { background-color: #dfe8d1; } .dropbtn { background-color: #04AA6D; color: white; padding: 10px; font-size: 12px; border: none; cursor: pointer; } .dropbtn:hover, .dropbtn:focus { background-color: #3e8e41; } #myInput2 { box-sizing: border-box; background-image: url('searchicon.png'); background-position: 12px 12px; background-repeat: no-repeat; font-size: 12px; padding: 20px 20px 12px 45px; border: none; border-bottom: 1px solid #ddd; } #myInput:focus {outline: 3px solid #ddd;} .dropdown { position: relative; display: inline-block; } .dropdown-content { display: none; position: absolute; background-color: #f6f6f6; min-width: 280px; overflow: auto; border: 1px solid #ddd; z-index: 1; } .dropdown-content a { color: black; padding: 12px 12px; text-decoration: none; display: block; } .dropdown a:hover {background-color: #ddd;} .show {display: block;}
+</style>
+</head>
+<body>
+    
+ <a href="https://www.instagram.com/p/CgZMsqQv-5f/"><img src="https://lh3.googleusercontent.com/2DipCNiwBIWykqmN_UTMlbYXbKaGGprQavYtpLod_hsu8g96TMZpCQOyJzbNUsATWGEztcO0qPBTNHpMlPiG-an-GNJG48sS9-4edaDszA5FnuNZG_CDtRH_35vu5phk8TpbIOjXvbbYuY-EHkD3YBjR_g" width="520" height="66"></a>
+ <h3>嶼巴 NLB 37H (循環線 Circular)</h3>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="輸入您的目的地 Type your destinations">
+
+<table style="font-size: 14px"><tr><td>下一班車 Next bus in: </td><td><div id="info"></div></td><tr><td>今天的票價是 Today's fare is #:</td><td><p id="demo"><p style="font-size: x-small"> #香港公眾假期不包括在這功能This function are not compatible during the Hong Kong Public Holiday</p></table> 
+
+<table id="myTable">
+  <tr class="header">
+ 	 <th style="width:25%;">往 To (Directions)</th>
+     <th style="width:25%;">來自 From</th>
+    <th style="width:15%;">平日票價 Weekdays fare</th>
+    <th style="width:15%;">假日票價 Holidays fare</th>
+    <th style="width:25%;">交通時間 traffic time^ </th>
+  </tr>
+<tr><td></td><td>迎東邨 Ying Tung Estate</td><td>$3.50 </td><td>$3.50 </td><td></td>
+<tr><td>昇薈(南行) The Visionary (South Bound)</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:02</td>
+<tr><td>映灣園二期 Caribbean Coast Phase</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:05</td>
+<tr><td>怡東路 Yi Tung Road</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:09</td>
+<tr><td>怡文中學 E Wun Secondary School</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:14</td>
+<tr><td>海堤灣畔 Seaview Crescent</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:16</td>
+<tr><td>東涌發展碼頭 Tung Chung Development Ferry Pier</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:19</td>
+<tr><td>東涌纜車站 Tung Chung Cable Car Terminal</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:22</td>
+<tr><td>東涌站巴士總站 Tung Chung Station Bus Terminus</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:25</td>
+<tr><td>裕東苑 Yu Tung Court</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:28</td>
+<tr><td>北大嶼山醫院(北行), 逸東邨美逸樓 North Lantau Hospital (North Bound), Mei Yat House Yat Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:31</td>
+<tr><td>北大嶼山醫院(主座大樓) North Lantau Hospital(Main Block)</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:33</td>
+<tr><td>北大嶼山醫院(南行) North Lantau Hospital (South Bound)</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:38</td>
+<tr><td>裕泰苑 Yu Tai Court</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:41</td>
+<tr><td>馬灣新村 Ma Wan Sun Tsuen</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:43</td>
+<tr><td>滿東邨 Mun Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:45</td>
+<tr><td>逸東邨福逸樓 Fuk Yat House, Yat Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:50</td>
+<tr><td>逸東邨雍逸樓 Yung Yat House, Yat Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:56</td>
+<tr><td>北大嶼山醫院(北行), 逸東邨美逸樓 North Lantau Hospital (North Bound), Mei Yat House Yat Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>0:58</td>
+<tr><td>逸東邨 Yat Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:00</td>
+<tr><td>北大嶼山醫院(南行) North Lantau Hospital (South Bound)</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:02</td>
+<tr><td>東涌消防局 Tung Chung Fire Station</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:04</td>
+<tr><td>東涌纜車站 Tung Chung Cable Car Terminal</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:06</td>
+<tr><td>東涌站巴士總站 Tung Chung Station Bus Terminus</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:09</td>
+<tr><td>東涌發展碼頭 Tung Chung Development Ferry Pier</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:15</td>
+<tr><td>海堤灣畔 Seaview Crescent</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:18</td>
+<tr><td>藍天海岸 Coastal Skyline</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:20</td>
+<tr><td>映灣園三期 Caribbean Coast Phase</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:22</td>
+<tr><td>映灣園二期 Caribbean Coast Phase</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:24</td>
+<tr><td>映灣園一期 Caribbean Coast Phase</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:26</td>
+<tr><td>昇薈(北行) The Visionary(North Bound)</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:30</td>
+<tr><td>迎東邨 Ying Tung Estate</td><td></td><td>$3.50 </td><td>$3.50 </td><td>1:33</td>
+</table>
+
+<p class="p1" style="font-size:9px"><a href="https://linktr.ee/lantaumap"><img src="https://lh3.googleusercontent.com/S03A0kARqqs7Kby5JkMNE4VIWsV-z7g-KC7a5VTw_povU0I5nbwHiGHgqzmBuCrRKadgJa60ugKa8rzKdwTpAbXNStowFLk1oNuTnKfwLH4pzuCMcox6dOKcOdTAU5Gdt3xmw-FRkGrtZMb1WFW2cy2YZA" style="height:65px;"></a><br><br>© 2022 Lantau island Trip advisor all right reserved, developed by Otto Yu<br><br>Terms of Service🔒<br>Lantau island Trip advisor is committed to complying with the relevant laws and regulations on the protection of personal data and the company's privacy protection policy, and properly manage and protect the privacy of users.Except for the scope notified below or otherwise provided by law, this merchant will not provide location information to third parties.</p><p class="p1" style="font-size:9px"><br>The <a href="https://docs.google.com/spreadsheets/d/1Y-rDr_guubPYimoi_6NFDwKtppNM7pO0rNbvpAuBu2o/edit?usp=sharing" class="p1" style="font-size:9px">Geodatabase </a>created by Otto in this page is an open source sheet, welcome to click the link to view the bus stations details.</p><br>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+function myFunction3() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput3");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+function myFunction2() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput2");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+const weekday = ["假日票價 Holidays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日票價 Weekdays fare","平日/星期六票價 Weekdays/Saturday fare"];
+
+const d = new Date();
+let day = weekday[d.getDay()];
+document.getElementById("demo").innerHTML = day;
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+  var Timetable = function(){
+  var busstop = ["06:10","06:30","06:50","07:10","07:30","07:50","08:10","08:30","08:50","09:10","09:30","09:50","10:10","10:30","10:50","11:10","11:30","11:50","12:10","12:30","12:50","13:10","13:30","13:50","14:10","14:30","14:50","15:10","15:30","15:50","16:10","16:30","16:50","17:10","17:30","17:50","18:10","18:30","18:50","19:10","19:30","19:50","20:10","20:30","21:00","21:30","22:00","22:30","23:00","23:30","00:00","00:30","01:00","01:15"
+];
+  var today = new Date().toUTCString().slice(0, 16);
+  
+  for(var i=0, l=busstop.length; i<l; i++){
+    busstop[i] = new Date(today+" "+busstop[i]);
+  }
+  var campus = busstop;
+
+  var update = setTimeout($.noop, 0);
+  
+  this.next = function(place){
+    clearTimeout(update); 
+    if(place == "l")
+      var times = leam;
+    else
+      times = campus;
+    var now = new Date();
+    var d; 
+    var next = '<span id="time">';
+    for(var i=0, l=times.length; i<l; i++){
+      if(times[i].getTime() >= now.getTime()){
+        d = (times[i].getTime()-now.getTime())/(1000*60);
+        if(d >= 60)
+          next += Math.floor(d/60)+"</span>小時 hours and "+Math.round(d % 60)+" 分鐘 mins";
+        else
+          next += Math.round(d)+"</span> 分鐘 mins";
+        break;
+      }
+    }
+    var fn = arguments.callee;
+    var _this = this;
+    update = setTimeout(function(){
+      document.getElementById('info').innerHTML = fn.call(_this, place);
+    },(d+0.5-Math.floor(d+0.5))*60*1000+1000);
+    return next;
+  }
+}
+
+var timetable = new Timetable();
+
+document.onready = function(){
+  document.getElementById('info').innerHTML = timetable.next('c');
+}
+
+$(document).ready(function(){
+    $('#c').click(function(){
+      if($(this).hasClass('active'))
+        return;
+      document.getElementById('info').innerHTML = timetable.next('c');
+      $(this).addClass('active')
+             .siblings().removeClass('active');
+    });
+    $('#l').click(function(){
+      if($(this).hasClass('active'))
+        return;
+      document.getElementById('info').innerHTML = timetable.next('l');
+      $(this).addClass('active')
+             .siblings().removeClass('active');
+    });
+});
+</script>
+</body>
+</html>
